@@ -1,0 +1,161 @@
+@import './navbar';
+@import './footer';
+@import './var';
+
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Share+Tech+Mono&family=Source+Code+Pro:wght@200&family=Ubuntu+Mono&display=swap');
+
+$home-bgcolor: rgb(0, 118, 144);
+$typinganimspeed: 4s;
+$typewriterchar: 17;
+
+#home{
+	display: flex;
+	flex-direction: column;
+	height: 95vh;
+	// position: absolute;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background: $home-bgcolor;
+}
+
+#home-img {
+		
+	// position: relative;
+	top: 0;
+	
+		img{
+			width: 16em;
+			transition: transform 100ms ease-in-out;
+
+			&:hover{
+				transform: scale(1.1);
+			}
+		}
+}
+
+.title{
+	color: white;
+	font-size: 4rem;
+	// padding: 20px;
+	font-family: 'Share Tech Mono', monospace;
+	position: relative;
+
+	&::before, &::after{
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	&::before{
+		background: $home-bgcolor;
+		animation: typewriter $typinganimspeed steps($typewriterchar) 1s forwards;
+	}
+	
+	&::after{
+		width: 0.125em;
+		background: rgba(0, 0, 0, 0.8);
+		animation: typewriter $typinganimspeed steps($typewriterchar) 1s forwards, blinker 500ms infinite alternate;
+	}
+
+}
+
+
+.sub-title{
+	color: white;
+	font-size: 1.7rem;
+	padding: 20px;
+	opacity: 0;
+
+	$fadespeed: $typinganimspeed + 1.5s;
+	@debug $fadespeed;
+	animation: fadeInUp 1.5s ease $fadespeed forwards;
+	
+}
+
+
+/* SECTIONS */
+#web-dev{
+	background: linear-gradient(
+		to right,
+		rgb(121, 222, 199), 
+		 rgb(145, 229, 210)
+	);
+	padding: 0.8rem;
+	position: relative;
+}
+.sec{
+	height: max-content;
+	border-radius: 1.5em;
+	background: linear-gradient(
+		to right,
+		rgba(255,255,255,0.6),
+		rgba(255,255,255,0.2)
+	);
+}
+.sec>div{
+	padding: 0.4em 1em;
+}
+.sec-title{
+	font-size: 3.5em;
+	justify-content: center;
+    display: flex;
+}
+.sec-subtitle{
+	font-size: 2em;
+}
+.sec-content{
+	font-size: 1.4em;
+}
+
+
+/* WEB DEV */
+.projects{
+	display: flex;
+}
+
+.project-head{
+	font-size: 1.7rem;
+}
+
+.projects>div{
+    margin: 0.6em;
+    padding: 6em 0px 0px;
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+	width: 30%;
+	border-radius: 0.5em;
+	transition: transform 100ms ease-in-out;
+
+	&:hover .project-content{
+		transform: translateY(0);
+	}
+}
+
+#metis-project{
+	@include back-img("../images/metis_site.jpg");
+}
+#amal-project{
+	@include back-img("../images/amalthea.jpg");
+}
+#blith-project{
+	@include back-img("../images/blith.jpg");
+}
+#xyz-project{
+	@include back-img("../images/jack.jpg");
+}
+
+.project-content{
+	transform: translateY(140%);
+	transition: transform 100ms ease-in-out;
+	background: white;
+	opacity: 0.8;
+    height: 4em;
+    padding: 0.3em 0.8em;
+}
+
