@@ -52,10 +52,29 @@
 #nav-search{
 	position: absolute;
 	right: 0px;
-
+	display: flex;
 
 	img{
 		width: 24px;
 		margin: 26px;
+
+	}
+
+	&:hover .search-box,
+	.search-box:focus-within{
+		transform: scale(1);
 	}
 }
+
+.search-box{
+	height: 2.5em;
+    margin: auto;
+    padding: 0.2em;
+    border-radius: 1em;
+    border: none;
+	outline: none;
+    transform: scale(0);
+    transform-origin: right;
+	transition: transform 1s ease;
+}
+
