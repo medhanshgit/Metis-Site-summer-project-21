@@ -1,0 +1,57 @@
+@import './var';
+$home-back-radius: 30em;
+
+
+body{
+	background-color: #000124;
+	color: white;
+}
+
+#home{
+	height: 98vh;
+	display: flex;
+	@include flexCenter(column)
+}
+
+#head-back{
+	position: absolute;
+	top: 0;
+    background: linear-gradient(44deg, rgba(131,58,180,1) 17%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 84%);
+    width: $home-back-radius*2;
+    height: $home-back-radius;
+    border-radius: 0 0 $home-back-radius $home-back-radius;
+}
+
+.title{
+	display: flex;
+	color: white;
+	font-size: 5rem;
+	// padding: 20px;
+	font-family: 'Share Tech Mono', monospace;
+	position: relative;
+	top: -0.8em;
+}
+
+.card{
+	margin: 1em;
+    padding: 2em;
+    border: white 2px solid;
+    border-radius: 10px;
+    display: flex;
+}
+
+.card-img{
+	border-right: grey 2px solid;
+    width: 9em;
+    padding-right: 2em;
+}
+.card-body{
+	padding-left: 2em;
+}
+.card-head{
+	font-size: 2em;
+}
+.card-desc{
+	position: relative;
+    top: 1em;
+}

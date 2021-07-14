@@ -7,23 +7,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Metis | Home Page</title>
 	<link rel="stylesheet" href="./css/nav_foot.css">
+	<link rel="stylesheet" href="./css/resources.css">
 </head>
 
 <body>
 
 	include nav.pug
 
-	<section style="height: 80vh;" id="home">
-		
+	<section id="home">
+		<div id="head-back"></div>
+		<div class="title">Resources</div>
 	</section>
-	<section style="height: 100vh;">
-		
-	</section>
+
 
 	<section>
+	each con in content
+		div.card
+			img(src=strapiurl+con.image.formats.thumbnail.url alt=con.title).card-img
+			div.card-body
+				h1.card-head= con.title
+				p.card-desc= con.description
 
-		<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro at facere, aliquam ducimus optio qui. Fugit sint ratione, voluptatibus natus necessitatibus voluptates fuga distinctio magni aperiam saepe cupiditate possimus unde reprehenderit, aut reiciendis tempore dolorem. Magni amet beatae accusantium. Doloremque suscipit modi quae veniam accusantium, eos cupiditate cumque id odit labore quia. Quas vitae, architecto expedita, ullam laboriosam quis repellendus repudiandae similique et voluptate facilis maxime aut eos quam dicta! Quas perspiciatis vitae deleniti ad sint sequi exercitationem eveniet laborum sunt recusandae? Earum quaerat officia maxime laborum inventore ipsum optio facere deserunt, rerum animi, quam iste eos. Cupiditate, debitis placeat?
-		</div>
+		
 	</section>	
 		
 	include footer.pug

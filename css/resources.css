@@ -1,0 +1,122 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: #000124;
+  color: white;
+}
+
+#home {
+  height: 98vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#head-back {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(44deg, #833ab4 17%, #fd1d1d 50%, #fcb045 84%);
+  width: 60em;
+  height: 30em;
+  border-radius: 0 0 30em 30em;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 5rem;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  top: -0.8em;
+}
+
+.card {
+  margin: 1em;
+  padding: 2em;
+  border: white 2px solid;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-img {
+  border-right: grey 2px solid;
+  width: 9em;
+  padding-right: 2em;
+}
+
+.card-body {
+  padding-left: 2em;
+}
+
+.card-head {
+  font-size: 2em;
+}
+
+.card-desc {
+  position: relative;
+  top: 1em;
+}
+/*# sourceMappingURL=resources.css.map */

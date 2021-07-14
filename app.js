@@ -1,8 +1,12 @@
 const express = require("express");
 const path = require("path");
+const request = require("request");
+
 
 const app = express();
 const port = 80;
+const STRAPI_API_URL = "http://localhost:1337";
+
 
 app.use('/css', express.static('css'));
 app.use('/images', express.static('images'));
@@ -17,11 +21,21 @@ app.set('views', path.join(__dirname, 'views'));
 
 // ENDPOINTS
 app.get('/', (req,res) =>{
-	res.status(200).render('../index.pug');
+	res.status(200).render('../index');
 });
 
 app.get('/resources', (req,res) =>{
-	res.status(200).render('resources.pug');
+	request(`${STRAPI_API_URL}/cards`, function(error, response, body){
+		if(!error && response.statusCode == 200){
+			var parseBody = JSON.parse(body);
+			res.status(200).render('resources.pug', {content: parseBody, strapiurl: STRAPI_API_URL});
+			// console.log(parseBody);
+
+		}
+		// console.log("check2");
+	})
+	// console.log("check3");
+
 });
 
 
