@@ -10,7 +10,7 @@ body{
 #home{
 	height: 98vh;
 	display: flex;
-	@include flexCenter(column)
+	@include flexCenter(column);
 }
 
 #head-back{
@@ -26,7 +26,6 @@ body{
 	display: flex;
 	color: white;
 	font-size: 5rem;
-	// padding: 20px;
 	font-family: 'Share Tech Mono', monospace;
 	position: relative;
 	top: -0.8em;

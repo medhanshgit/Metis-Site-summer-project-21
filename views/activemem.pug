@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="./css/nav_foot.css")
+		link(rel="stylesheet", href="./css/actmem.css")
+		title Active Members | Metis
+	body 
+		include ./nav.pug
+
+		section#home
+			#head-back
+			.title Active Members
+		
+		section.act-mem 
+			table
+				thead
+					tr 
+						th Rollno.
+						th Name
+						th Points 
+				
+				tbody 
+					each dt in actdt
+						tr 
+							th= dt[0]
+							th= dt[1]
+							th= dt[2]
+					//- tr 
+					//- 	th 1
+					//- 	th kanishk 
+					//- 	th 100
+					//- tr 
+					//- 	th 2
+					//- 	th beast
+					//- 	th 90
+					//- tr 
+					//- 	th 3
+					//- 	th bruh
+					//- 	th 80
+		
+		include ./footer.pug
+		script
+			include ../js/nav.js

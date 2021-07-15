@@ -1,0 +1,121 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: #000124;
+  color: white;
+}
+
+#home {
+  height: 95vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#head-back {
+  position: absolute;
+  top: 0;
+  background: radial-gradient(circle, #4d62ff 0%, #1300ff 100%);
+  width: 60em;
+  height: 30em;
+  border-radius: 0 0 30em 30em;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 5rem;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  top: -0.8em;
+}
+
+.act-mem {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 2rem;
+}
+
+.act-mem table {
+  font-size: 2em;
+  width: 80%;
+  margin: auto;
+  border-radius: 3em;
+  overflow: hidden;
+}
+
+.act-mem table thead tr th {
+  background-color: #1300ff;
+  padding: 0.8em;
+}
+
+.act-mem table tbody {
+  font-size: 0.8em;
+}
+
+.act-mem table tbody tr th {
+  padding: 0.8em 0;
+}
+/*# sourceMappingURL=actmem.css.map */
