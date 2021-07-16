@@ -1,40 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+include nav.pug
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Metis | Home Page</title>
-	<link rel="stylesheet" href="./css/nav_foot.css">
-	<link rel="stylesheet" href="./css/resources.css">
-</head>
+head 
+	link(rel='stylesheet' href='../css/resources.css')
 
-<body>
+body
+	section#home
+		#head-back
+		.title Resources
 
-	include nav.pug
+	section
+		each con in content
+			div.card
+				img(src=strapiurl+con.image.formats.thumbnail.url alt=con.title).card-img
+				div.card-body
+					h1.card-head= con.title
+					p.card-desc= con.description
 
-	<section id="home">
-		<div id="head-back"></div>
-		<div class="title">Resources</div>
-	</section>
-
-
-	<section>
-	each con in content
-		div.card
-			img(src=strapiurl+con.image.formats.thumbnail.url alt=con.title).card-img
-			div.card-body
-				h1.card-head= con.title
-				p.card-desc= con.description
-
-		
-	</section>	
-		
+	
 	include footer.pug
-
 	script
 		include ../js/nav.js
-
-</body>
-</html>

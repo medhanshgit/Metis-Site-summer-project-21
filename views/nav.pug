@@ -1,19 +1,31 @@
-<nav class="navbar center">
-	<div id="nav-img">
-		<img src="./images/metis.jpg" alt="Metis">
-	</div>
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="#">Projects</a></li>
-		<li><a href="#">Team Metis</a></li>
-		<li><a href="/resources">Resources</a></li>
-		<li><a href="/actmembers">Active Members</a></li>
-	</ul>
-	<div id="nav-search">
-		<input type="text" class="search-box">
-		<img src="./images/search-3-48.png" alt="search">
-	</div>
-</nav>
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel='stylesheet' href='../css/nav_foot.css')
+		link(rel="icon", href="../images/favicon.png", type="image/png")
 
-//- script
-//- 	include ../js/nav.js
+		title= title
+	body 
+		nav.navbar.center
+			#nav-img
+				img(src='./images/metis.jpg' alt='Metis')
+			ul
+				li
+					a(href='/') Home
+				li
+					a(href='/projects') Projects
+				li
+					a(href='#') Team Metis
+				li
+					a(href='/resources') Resources
+				li
+					a(href='/actmembers') Active Members
+			#nav-search
+				input.search-box(type='text')
+				img(src='./images/search-3-48.png' alt='search')
+
+		//- script
+		//- 	include ../js/nav.js
