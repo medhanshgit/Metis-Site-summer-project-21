@@ -1,4 +1,6 @@
+@import './var';
 $home-back-radius: 30em;
+$home-back-radius-mobile: 20em;
 body{
 	background-color: #000124;
 	color: white;
@@ -14,6 +16,11 @@ body{
 #head-back{
 	position: absolute;
 	top: 0;
+	display: flex;
+	justify-content: center;
+	justify-self: center;
+	align-items: center;
+	align-self: center;
     background: radial-gradient(
 			circle,
 			rgba(77, 98, 255,1) 0%,
@@ -55,9 +62,39 @@ body{
 		tbody{
 			font-size: 0.8em;
 			
-			tr th{
-				padding: 0.8em 0;
+			tr{
+				opacity: 0;
+				transform: translateX(-200px);
+				th{
+					padding: 0.8em 0;
+				}
 			}
 		}
 	}
+}
+
+@media only screen and (max-width:1000px){
+	#home{
+		height: 60vh;
+	}
+	#head-back{
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 22em;
+		border-radius: 0 0 12em 12em;
+	}
+	.title{
+		font-size: 3rem;
+		position: relative;
+		top: -1.5em;
+	}
+	.act-mem{
+		padding: 1rem;
+		table{
+
+			font-size: 1.5rem;
+		}
+	}
+
 }

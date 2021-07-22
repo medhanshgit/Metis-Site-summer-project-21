@@ -7,22 +7,26 @@ html(lang="en")
 		link(rel='stylesheet' href='../css/nav_foot.css')
 		link(rel="icon", href="../images/favicon.png", type="image/png")
 
-		title= title
+		title= title + ' | Metis'
 	body 
-		nav.navbar.center
+		nav.navbar
 			#nav-img
 				img(src='./images/metis.jpg' alt='Metis')
+			a(href="#").toggle-button 
+				span.bar
+				span.bar
+				span.bar
 			ul
 				li
-					a(href='/') Home
+					a(href='/')#Home Home
 				li
-					a(href='/projects') Projects
+					a(href='/projects')#Projects Projects
 				li
-					a(href='#') Team Metis
+					a(href='/team')#Team Team Metis
 				li
-					a(href='/resources') Resources
+					a(href='/resources')#Resources Resources
 				li
-					a(href='/actmembers') Active Members
+					a(href='/actmembers')#Active Active Members
 			#nav-search
 				input.search-box(type='text')
 				img(src='./images/search-3-48.png' alt='search')

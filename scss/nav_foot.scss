@@ -1,24 +1,28 @@
 @import './var';
 
 .navbar{
-	height: 4.6rem;
+	height: max-content;
 	position: fixed;
 	width: 100%;
 	z-index: 1;
 	color: white;
 	transition: all 300ms ease-in-out;
 	background: transparent;
-	@include flexCenter(column);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	z-index: 100;
 
 	ul{
 		list-style: none;
 		display: flex;
-
+		margin: auto;
 
 		li{
 			font-size: 1.2em;
 			padding: 20px;
-
+			
 
 			a{
 				display: block;
@@ -38,20 +42,28 @@
 
 
 #nav-img{
-	position: absolute;
-	left: 0px;
-
+	position: relative;
+	// left: 1rem;
+	width: 10rem;
+	// display: flex;
+	// justify-content: center;
 	img{
-		width: 30%;
+		width: 28%;
     	border-radius: 50%;
     	margin: 0.45rem;
 	}
 }
 
+#active-link{
+	color: rgb(51, 51, 51);
+	background-color: white;
+	border-radius: 20px;	
+}
 
 #nav-search{
-	position: absolute;
+	position: relative;
 	right: 0px;
+	top: 0px;
 	display: flex;
 
 	img{
@@ -78,22 +90,41 @@
 	transition: transform 1s ease;
 }
 
+.toggle-button{
+	position: absolute;
+	top: 1.4rem;
+	left: 1rem;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30px;
+	height: 21px;
+
+	.bar{
+		height: 3px;
+		width: 100%;
+		background-color: white;
+		border-radius: 10px;
+	}
+}
+
+
 
 /* Footer  */
 footer{
 	background-color: #3581B8;
 	color: white;
 	height: auto;
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	flex-direction: column;
+	display: flex;
+	// grid-template-columns: 1fr 2fr;
+	flex-direction: row;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	position: relative;
 }
 
 .follow{
-	padding: 5rem 1rem;
+	padding: 5rem 8rem;
 	font-size: 1.3rem;
 	justify-content: center;
 
@@ -132,6 +163,7 @@ footer{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 0 8rem;
 
 	a{
 		text-decoration: none;
@@ -140,3 +172,68 @@ footer{
 		padding: 10px;
 	}
 }
+
+.active{
+	display: flex !important;
+}
+
+@media only screen and (max-width:1000px){
+	.navbar{
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		background-color: rgba(0,0,0, .4);
+		ul{
+			flex-direction: column;
+			width: 100%;
+			// justify-content: center;
+			align-items: center;
+			li{
+				// font-size: 0.8rem;
+				padding: 0.5rem;
+				display: none;
+				width: max-content;
+				text-align: center;
+			}
+			
+		} 
+			
+	}
+	.toggle-button{
+		display: flex;
+	}
+	#nav-img{
+		margin: 5px;
+		left: 3rem;
+		img{
+			width: 33%;
+		}
+	}
+	#nav-search{
+		position: absolute;
+		justify-content: flex-end;
+		img{
+			width: 26px;
+			margin: 28px 13px;
+		}
+	}
+	.search-box{
+		width: 50%;
+		margin: auto 5px;
+	}
+
+	footer{
+		width: 100%;
+		flex-direction: column;
+		.follow{
+			padding: 3rem 2rem;
+		}
+		.mail{
+			h1{
+				font-size: 1.8rem;
+			}
+			padding: 3rem 2rem;
+		}
+	}
+}
+

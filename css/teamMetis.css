@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Share+Tech+Mono&family=Source+Code+Pro:wght@200&family=Ubuntu+Mono&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: #000124;
+  color: white;
+}
+
+#home {
+  height: 98vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#head-back {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(44deg, #833ab4 17%, #fd1d1d 50%, #fcb045 84%);
+  width: 60em;
+  height: 30em;
+  border-radius: 0 0 30em 30em;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-size: 5rem;
+  font-family: 'Share Tech Mono', monospace;
+  position: relative;
+  top: -0.8em;
+}
+
+#secy {
+  display: block;
+}
+
+#secy .team-card {
+  margin: auto;
+}
+
+.team {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.team .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 4rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+}
+
+.team ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.team ul li {
+  list-style: none;
+  margin: 1rem;
+  width: 30%;
+}
+
+.team ul li .team-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  height: 36rem;
+  border-radius: 4rem;
+  padding: 1rem;
+  -webkit-box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+          box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
+  background: linear-gradient(45deg, rgba(196, 200, 243, 0.56), rgba(255, 255, 255, 0.1));
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.team ul li .team-card .card-img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 17rem;
+  width: 17rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(5rem);
+          transform: translateY(5rem);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.team ul li .team-card .card-img img {
+  height: 17rem;
+  width: auto;
+  border: none;
+}
+
+.team ul li .team-card .card-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(10rem);
+          transform: translateY(10rem);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.team ul li .team-card .card-content .name {
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+.team ul li .team-card .card-content .info {
+  font-size: 1.5rem;
+}
+
+.team ul li .team-card .card-content .contact {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.team ul li .team-card .card-content .contact a {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.team ul li .team-card .card-content .contact a .bi-linkedin:hover {
+  fill: #1e6dc7;
+}
+
+.team ul li .team-card .card-content .contact a .bi-github:hover {
+  fill: #161414;
+}
+
+.team ul li .team-card .card-content::before {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  height: 2px;
+  width: 90%;
+  background: white;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.team ul li .team-card:hover .card-img {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.team ul li .team-card:hover .card-content {
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+}
+
+.team ul li .team-card:hover .card-content::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#circle1 {
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  top: 4rem;
+  left: 32%;
+  z-index: -1;
+  border-radius: 50%;
+  background: linear-gradient(44deg, #833ab4 17%, #fd1d1d 50%, #fcb045 84%);
+}
+
+#circle2 {
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  top: 66%;
+  left: 6%;
+  z-index: -1;
+  border-radius: 50%;
+  background: linear-gradient(44deg, #833ab4 17%, #fd1d1d 50%, #fcb045 84%);
+}
+
+#circle3 {
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+  top: 31%;
+  left: 75%;
+  z-index: -1;
+  border-radius: 50%;
+  background: linear-gradient(44deg, #833ab4 17%, #fd1d1d 50%, #fcb045 84%);
+}
+
+@media only screen and (max-width: 1000px) {
+  #home {
+    height: 51vh;
+  }
+  #head-back {
+    position: absolute;
+    top: 0;
+    width: 24em;
+    height: 19em;
+    border-radius: 0 0 12em 12em;
+  }
+  .title {
+    font-size: 3rem;
+    position: relative;
+    top: -0.5em;
+  }
+  #circle3 {
+    top: 117%;
+    left: 55%;
+  }
+  .team ul li {
+    width: 87%;
+  }
+  .team ul li .team-card .card-content {
+    -webkit-transform: translateY(10.3rem);
+            transform: translateY(10.3rem);
+  }
+}
+/*# sourceMappingURL=teamMetis.css.map */

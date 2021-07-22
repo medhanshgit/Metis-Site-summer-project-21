@@ -1,19 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Share+Tech+Mono&family=Source+Code+Pro:wght@200&family=Ubuntu+Mono&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@-webkit-keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes blinker {
+  to {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #home {
+  height: 95vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 95vh;
-  width: 100%;
+  text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #007690;
 }
 
@@ -39,6 +90,8 @@
   font-size: 4rem;
   font-family: 'Share Tech Mono', monospace;
   position: relative;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
 }
 
 .title::before, .title::after {
@@ -48,6 +101,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
 }
 
 .title::before {
@@ -70,5 +125,158 @@
   opacity: 0;
   -webkit-animation: fadeInUp 1.5s ease 5.5s forwards;
           animation: fadeInUp 1.5s ease 5.5s forwards;
+}
+
+#what {
+  z-index: 2;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  background: black;
+}
+
+#what .content {
+  z-index: 10;
+  width: 100%;
+  padding: 5rem 0;
+}
+
+#what .content h1 {
+  font-size: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 8rem;
+  grid-area: "head";
+}
+
+#what .content .sub-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+#what .content .sub-head .code-hard {
+  width: 50%;
+}
+
+#what .content .sub-head .code-hard h3 {
+  font-size: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: black;
+}
+
+#what .content .sub-head .project-link {
+  color: black;
+  font-size: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: bold;
+  color: black;
+  width: 50%;
+  padding: 0.8rem;
+}
+
+#what .content .sub-head .project-link div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#what .content .sub-head .project-link div #angular-bracket {
+  padding: 0 15px;
+}
+
+#what .content .sub-head .project-link div a {
+  text-decoration: none;
+  color: black;
+}
+
+#what .content .sub-head .project-link div a:hover {
+  color: rgba(37, 18, 44, 0.705);
+}
+
+.cursor {
+  z-index: 5;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  position: absolute;
+  background-color: lightblue;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+@media only screen and (max-width: 1000px) {
+  #home-img img {
+    width: 12rem;
+  }
+  .title {
+    font-size: 2.4rem;
+  }
+  .sub-title {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  #what .content h1 {
+    font-size: 2.7rem;
+    padding-bottom: 4rem;
+  }
+  #what .content .sub-head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #what .content .sub-head .code-hard {
+    width: auto;
+    padding: 2rem 0;
+  }
+  #what .content .sub-head .code-hard h3 {
+    font-size: 2rem;
+  }
+  #what .content .sub-head .project-link {
+    font-size: 2rem;
+    width: auto;
+  }
+  #what .content .sub-head .project-link div #angular-bracket {
+    padding: 0 5px;
+  }
 }
 /*# sourceMappingURL=Index.css.map */

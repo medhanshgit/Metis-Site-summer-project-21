@@ -7,14 +7,16 @@ let sectionOneOptions = {
 };
 	
 const sectionOneObserver = new IntersectionObserver(function (entries, sectionOneObserver) {
-
-	entries.forEach(entry =>{
-		if(!entry.isIntersecting){
-			nav.style.background = "#272727";
-		} else{
-			nav.style.background = "transparent";
-		}
-	});
+	// console.log(window.innerWidth);
+	if( window.innerWidth>1000 ){
+		entries.forEach(entry =>{
+			if(!entry.isIntersecting){
+				nav.style.background = "#272727";
+			} else{
+				nav.style.background = "transparent";
+			}
+		});
+	}
 }, sectionOneOptions);
 					
 sectionOneObserver.observe(sechome);
@@ -33,3 +35,12 @@ window.addEventListener("scroll", function(){
 	}
 	lastScrollTop = st <= 0 ? 0 : st;
 }, false);
+
+let toggleButton = document.querySelector('.toggle-button');
+let navbarLinks = document.querySelectorAll('.navbar ul li')
+
+toggleButton.addEventListener('click', ()=>{
+	navbarLinks.forEach(navlink =>{
+		navlink.classList.toggle('active');
+	})
+});

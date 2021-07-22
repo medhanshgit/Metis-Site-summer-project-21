@@ -36,7 +36,7 @@ client.authorize(function(err, tokens){
 		console.log('There is an error' + err);
 		return;
 	}else{
-		console.log('connected');
+		// console.log('connected');
 		gsrun(client)
 	}
 });
@@ -70,12 +70,23 @@ async function gsrun(cl){
 
 // Home Page
 app.get('/', (req,res) =>{
-	res.status(200).render('./index', {title: "Home | Metis"});
+	res.status(200).render('./index', {title: "Home"});
 });
 
 // Projects Page
 app.get('/projects', (req,res) =>{
-	res.status(200).render('projects', {title: "Projects | Metis"});
+	res.status(200).render('projects', {title: "Projects"});
+});
+
+// Team Metis
+app.get('/team', (req,res) =>{
+	request(`${STRAPI_API_URL}/members`, function(error, response, body){
+		
+		if(!error && response.statusCode == 200){
+			var parseBody = JSON.parse(body);
+			res.status(200).render('./teamMetis', {title: "Team Metis", content: parseBody, strapiurl: STRAPI_API_URL});
+		}
+	})
 });
 
 
@@ -85,7 +96,7 @@ app.get('/resources', (req,res) =>{
 		
 		if(!error && response.statusCode == 200){
 			var parseBody = JSON.parse(body);
-			res.status(200).render('resources.pug', {title: "Resources | Metis", content: parseBody, strapiurl: STRAPI_API_URL});
+			res.status(200).render('resources.pug', {title: "Resources", content: parseBody, strapiurl: STRAPI_API_URL});
 		}
 	})
 });
@@ -99,13 +110,13 @@ app.get('/actmembers', (req,res) =>{
 			console.log('There is an error' + err);
 			return;
 		}else{
-			console.log('connected');
+			// console.log('connected');
 			gsrun(client)
 		}
 	});
 
 	// console.log(newdt);
-	res.status(200).render('activemem.pug', {title: "Active Members | Metis", actdt: newdt.slice(0,10)});
+	res.status(200).render('activemem.pug', {title: "Active Members", actdt: newdt.slice(0,10)});
 		
 		
 	// To update data in sheet

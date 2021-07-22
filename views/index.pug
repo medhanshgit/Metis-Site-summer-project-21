@@ -6,14 +6,31 @@ body
 
 	section#home
 			
-		div#home-img
+		#home-img
 			<img src="../images/metis.jpg" alt="Metis">
 		
-		div.title Welcome To Metis;
-		div.sub-title Eat.Sleep.Code.Debug.Repeat
+		.title Welcome To Metis;
+		.sub-title Eat.Sleep.Code.Debug.Repeat
 
-
+	section#what 
+		.content
+			h1 What we do?
+			.sub-head
+				.code-hard
+					h3 We code
+					h3 We code hard
+				.project-link 
+					div ...or you can visit our
+					div 
+						div#angular-bracket &lt;a&gt;
+						a(href="/projects") Projects
+						div#angular-bracket &lt;/a&gt;
+						|  page.					
+		.cursor
+	
 	include ./footer.pug
+	script(src="https://code.jquery.com/jquery-3.5.1.min.js")
 	script
 		include ../js/index.js
 		include ../js/nav.js
+	
