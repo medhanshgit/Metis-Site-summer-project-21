@@ -50,10 +50,12 @@
 
 body {
   background-color: #000124;
+  color: white;
+  -webkit-perspective: 2000px;
+          perspective: 2000px;
 }
 
 #home {
-  color: white;
   height: 95vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,146 +106,93 @@ body {
   top: -0.8em;
 }
 
-/* SECTIONS */
-#web-dev {
-  background: -webkit-gradient(linear, left top, right top, from(#79dec7), to(#91e5d2));
-  background: linear-gradient(to right, #79dec7, #91e5d2);
-  padding: 0.8rem;
-  position: relative;
-}
-
-.sec {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  border-radius: 1.5em;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.2)));
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
-}
-
-.sec > div {
-  padding: 0.4em 1em;
-}
-
-.sec-title {
-  font-size: 3.5em;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+#projects ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.sec-subtitle {
-  font-size: 2em;
+#projects ul li {
+  width: 50%;
+  list-style: none;
 }
 
-.sec-content {
-  font-size: 1.4em;
+#projects ul li .card {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: auto;
+  margin: 1rem;
+  padding: 1rem;
+  background: linear-gradient(25deg, rgba(0, 21, 255, 0.61), rgba(255, 0, 0, 0.46));
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 15px;
 }
 
-/* WEB DEV */
-.projects {
+#projects ul li .card .card-head {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+}
+
+#projects ul li .card .card-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
 }
 
-.project-head {
-  font-size: 1.7rem;
+#projects ul li .card .card-content .card-img {
+  padding: 0.5rem;
+  width: 50%;
+  height: 100%;
 }
 
-.projects > div {
-  margin: 0.6em;
-  padding: 6em 0px 0px;
-  height: 10em;
+#projects ul li .card .card-content .card-img img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#projects ul li .card .card-content .card-desc {
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.2rem;
+}
+
+#projects ul li .card .card-content .card-desc p:first-child {
+  padding-bottom: 1rem;
+}
+
+#projects ul li .card .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  overflow: hidden;
-  width: 30%;
-  border-radius: 0.5em;
-  -webkit-transition: -webkit-transform 100ms ease-in-out;
-  transition: -webkit-transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out, -webkit-transform 100ms ease-in-out;
+  width: 100%;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
 }
 
-.projects > div:hover .project-content {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+#projects ul li .card .contact a {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
 }
 
-#metis-project {
-  background: url("../images/metis_site.jpg") no-repeat center center/cover;
+#projects ul li .card .contact a .bi-linkedin:hover {
+  fill: #1e6dc7;
 }
 
-#amal-project {
-  background: url("../images/amalthea.jpg") no-repeat center center/cover;
-}
-
-#blith-project {
-  background: url("../images/blith.jpg") no-repeat center center/cover;
-}
-
-#xyz-project {
-  background: url("../images/jack.jpg") no-repeat center center/cover;
-}
-
-.project-content {
-  -webkit-transform: translateY(140%);
-          transform: translateY(140%);
-  -webkit-transition: -webkit-transform 100ms ease-in-out;
-  transition: -webkit-transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out;
-  transition: transform 100ms ease-in-out, -webkit-transform 100ms ease-in-out;
-  background: white;
-  opacity: 0.8;
-  height: 4em;
-  padding: 0.3em 0.8em;
-}
-
-@media only screen and (max-width: 1000px) {
-  #home {
-    height: 51vh;
-  }
-  #head-back {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 19em;
-    border-radius: 0 0 12em 12em;
-  }
-  .title {
-    font-size: 3rem;
-    position: relative;
-    top: -0.5em;
-  }
-  .projects {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .projects > div {
-    width: 80%;
-    margin: 10px auto;
-  }
-  .sec-title {
-    font-size: 2.5rem;
-  }
-  .sec-subtitle {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
+#projects ul li .card .contact a .bi-github:hover {
+  fill: #161414;
 }
 /*# sourceMappingURL=projects.css.map */

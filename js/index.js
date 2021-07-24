@@ -34,7 +34,7 @@ whatsec.addEventListener("mouseenter",(e)=>{
 		let x = e.pageX;
 		let y = e.pageY-home.offsetHeight;
 		// cursor.classList.add(".cursor-active")
-		cursor.style.transform = "scale(1.3) translate(-50%,-50%)";
+		cursor.style.transform = "scale(1.6) translate(-50%,-50%)";
 		cursor.style.top = y + 'px';
 		cursor.style.left = x + 'px';
 		// console.log(x,y);

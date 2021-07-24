@@ -53,12 +53,12 @@ async function gsrun(cl){
 	let data = await gsapi.spreadsheets.values.get(opt);
 	let dtarr = data.data.values;
 	
-	dtarr = dtarr.map(function(r){
-		while(r.length < 2){
-			r.push('');
-		}
-		return r;
-	});
+	// dtarr = dtarr.map(function(r){
+	// 	while(r.length < 2){
+	// 		r.push('');
+	// 	}
+	// 	return r;
+	// });
 	
 	newdt = dtarr.sort(function(a,b){
 		return b[2]-a[2];
@@ -75,7 +75,14 @@ app.get('/', (req,res) =>{
 
 // Projects Page
 app.get('/projects', (req,res) =>{
-	res.status(200).render('projects', {title: "Projects"});
+	request(`${STRAPI_API_URL}/projects`, function(error, response, body){
+		
+		if(!error && response.statusCode == 200){
+			var parseBody = JSON.parse(body);
+			res.status(200).render('projects', {title: "Projects", content: parseBody, strapiurl: STRAPI_API_URL});
+		}
+	})
+	// res.status(200).render('projects', {title: "Projects"});
 });
 
 // Team Metis
@@ -96,7 +103,7 @@ app.get('/resources', (req,res) =>{
 		
 		if(!error && response.statusCode == 200){
 			var parseBody = JSON.parse(body);
-			res.status(200).render('resources.pug', {title: "Resources", content: parseBody, strapiurl: STRAPI_API_URL});
+			res.status(200).render('resources', {title: "Resources", content: parseBody, strapiurl: STRAPI_API_URL});
 		}
 	})
 });
@@ -116,7 +123,7 @@ app.get('/actmembers', (req,res) =>{
 	});
 
 	// console.log(newdt);
-	res.status(200).render('activemem.pug', {title: "Active Members", actdt: newdt.slice(0,10)});
+	res.status(200).render('activemem', {title: "Active Members", actdt: newdt.slice(0,10)});
 		
 		
 	// To update data in sheet
@@ -132,7 +139,10 @@ app.get('/actmembers', (req,res) =>{
 	
 });
 
-
+// Events Page
+app.get('/events', (req,res) =>{
+	res.status(200).render('events', {title: "Events And Workshops"});
+});
 
 
 app.listen(port, ()=>{
