@@ -2,8 +2,10 @@ const express = require("express");
 const path = require("path");
 const request = require("request");
 const {google} = require('googleapis');
-const keys = require('./keys.json');
-
+try{
+	var keys = require('./keys.json');
+}
+finally{}
 
 const app = express();
 const port = 80;
@@ -24,12 +26,22 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 // Authorizing client for fetching data from google sheets
-const client = new google.auth.JWT(
-	keys.client_email,
-	null,
-	keys.private_key,
-	['https://www.googleapis.com/auth/spreadsheets']
-);
+try{
+	var client = new google.auth.JWT(
+		keys.client_email,
+		null,
+		keys.private_key,
+		['https://www.googleapis.com/auth/spreadsheets']
+	);
+}
+catch(err){
+	var client = new google.auth.JWT(
+		process.env.client_email,
+		null,
+		process.env.private_key,
+		['https://www.googleapis.com/auth/spreadsheets']
+	);
+}
 
 client.authorize(function(err, tokens){
 	if(err){
