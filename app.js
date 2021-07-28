@@ -29,10 +29,16 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 // Authorizing client for fetching data from google sheets
+// const client = new google.auth.JWT(
+// 	keys.client_email,
+// 	null,
+// 	keys.private_key,
+// 	['https://www.googleapis.com/auth/spreadsheets']
+// );
 const client = new google.auth.JWT(
-	keys.client_email,
+	process.env.client_email,
 	null,
-	keys.private_key,
+	process.env.private_key,
 	['https://www.googleapis.com/auth/spreadsheets']
 );
 
