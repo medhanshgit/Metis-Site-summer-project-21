@@ -4,15 +4,18 @@ const request = require("request");
 const {google} = require('googleapis');
 try{
 	var keys = require('./keys.json');
+	throw e;
 }
-finally{}
+catch(e){
+}
+
 
 const app = express();
 const port = 80;
-const STRAPI_API_URL = "http://localhost:1337";
+// const STRAPI_API_URL = "http://localhost:1337";
+const STRAPI_API_URL = "https://codeatmetis.herokuapp.com";
 
 let newdt;
-
 
 app.use('/css', express.static('css'));
 app.use('/images', express.static('images'));
@@ -26,32 +29,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 // Authorizing client for fetching data from google sheets
-try{
-	var client = new google.auth.JWT(
-		keys.client_email,
-		null,
-		keys.private_key,
-		['https://www.googleapis.com/auth/spreadsheets']
-	);
-}
-catch(err){
-	var client = new google.auth.JWT(
-		process.env.client_email,
-		null,
-		process.env.private_key,
-		['https://www.googleapis.com/auth/spreadsheets']
-	);
-}
-
-client.authorize(function(err, tokens){
-	if(err){
-		console.log('There is an error' + err);
-		return;
-	}else{
-		// console.log('connected');
-		gsrun(client)
-	}
-});
+const client = new google.auth.JWT(
+	keys.client_email,
+	null,
+	keys.private_key,
+	['https://www.googleapis.com/auth/spreadsheets']
+);
 
 // Active Member data from google sheets
 async function gsrun(cl){	
@@ -77,6 +60,16 @@ async function gsrun(cl){
 	});
 }
 
+client.authorize(function(err, tokens){
+	if(err){
+		console.log('There is an error' + err);
+		return;
+	}else{
+		// console.log('connected');
+		gsrun(client)
+	}
+});
+
 
 // ENDPOINTS
 
@@ -94,7 +87,6 @@ app.get('/projects', (req,res) =>{
 			res.status(200).render('projects', {title: "Projects", content: parseBody, strapiurl: STRAPI_API_URL});
 		}
 	})
-	// res.status(200).render('projects', {title: "Projects"});
 });
 
 // Team Metis
@@ -111,7 +103,7 @@ app.get('/team', (req,res) =>{
 
 // Resources
 app.get('/resources', (req,res) =>{
-	request(`${STRAPI_API_URL}/cards`, function(error, response, body){
+	request(`${STRAPI_API_URL}/resources`, function(error, response, body){
 		
 		if(!error && response.statusCode == 200){
 			var parseBody = JSON.parse(body);
@@ -129,12 +121,10 @@ app.get('/actmembers', (req,res) =>{
 			console.log('There is an error' + err);
 			return;
 		}else{
-			// console.log('connected');
 			gsrun(client)
 		}
 	});
 
-	// console.log(newdt);
 	res.status(200).render('activemem', {title: "Active Members", actdt: newdt.slice(0,10)});
 		
 		
