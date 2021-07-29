@@ -2,18 +2,14 @@ const express = require("express");
 const path = require("path");
 const request = require("request");
 const {google} = require('googleapis');
-try{
-	var keys = require('./keys.json');
-	throw e;
-}
-catch(e){
-}
+
+var keys = require('./keys.json');
 
 
 const app = express();
 const port = 80;
 // const STRAPI_API_URL = "http://localhost:1337";
-const STRAPI_API_URL = "https://codeatmetis.herokuapp.com";
+const STRAPI_API_URL = "https://metisstrapi.herokuapp.com";
 
 let newdt;
 
@@ -29,18 +25,18 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 // Authorizing client for fetching data from google sheets
-// const client = new google.auth.JWT(
-// 	keys.client_email,
-// 	null,
-// 	keys.private_key,
-// 	['https://www.googleapis.com/auth/spreadsheets']
-// );
 const client = new google.auth.JWT(
-	process.env.client_email,
+	keys.client_email,
 	null,
-	process.env.private_key,
+	keys.private_key,
 	['https://www.googleapis.com/auth/spreadsheets']
 );
+// const client = new google.auth.JWT(
+// 	process.env.client_email,
+// 	null,
+// 	process.env.private_key,
+// 	['https://www.googleapis.com/auth/spreadsheets']
+// );
 
 // Active Member data from google sheets
 async function gsrun(cl){	
