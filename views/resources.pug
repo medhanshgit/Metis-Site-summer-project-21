@@ -11,7 +11,7 @@ body
 	section
 		each con in content
 			div.card
-				img(src= strapiurl+con.image.formats.thumbnail.url  alt=con.title).card-img
+				img(src= drive + con.imgid  alt=con.title).card-img
 				div.card-body
 					h1.card-head= con.title
 					p.card-desc= con.description

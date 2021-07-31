@@ -10,7 +10,7 @@ const app = express();
 const port = 80;
 // const STRAPI_API_URL = "http://localhost:1337";
 const STRAPI_API_URL = "https://metisstrapi.herokuapp.com";
-
+const DRIVE_URL = "https://drive.google.com/uc?export=view&id=";
 let newdt;
 
 app.use('/css', express.static('css'));
@@ -86,7 +86,7 @@ app.get('/projects', (req,res) =>{
 		
 		if(!error && response.statusCode == 200){
 			var parseBody = JSON.parse(body);
-			res.status(200).render('projects', {title: "Projects", content: parseBody, strapiurl: STRAPI_API_URL});
+			res.status(200).render('projects', {title: "Projects", content: parseBody, drive: DRIVE_URL});
 		}
 	})
 });
@@ -97,7 +97,7 @@ app.get('/team', (req,res) =>{
 		
 		if(!error && response.statusCode == 200){
 			var parseBody = JSON.parse(body);
-			res.status(200).render('./teamMetis', {title: "Team Metis", content: parseBody, strapiurl: STRAPI_API_URL});
+			res.status(200).render('./teamMetis', {title: "Team Metis", content: parseBody, drive: DRIVE_URL});
 		}
 	})
 });
@@ -109,7 +109,7 @@ app.get('/resources', (req,res) =>{
 		
 		if(!error && response.statusCode == 200){
 			var parseBody = JSON.parse(body);
-			res.status(200).render('resources', {title: "Resources", content: parseBody, strapiurl: STRAPI_API_URL});
+			res.status(200).render('resources', {title: "Resources", content: parseBody, drive: DRIVE_URL});
 		}
 	})
 });
