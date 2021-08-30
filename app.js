@@ -145,7 +145,13 @@ app.get('/actmembers', (req,res) =>{
 
 // Events Page
 app.get('/events', (req,res) =>{
-	res.status(200).render('events', {title: "Events And Workshops"});
+	request(`${STRAPI_API_URL}/events`, function(error, response, body){
+		
+		if(!error && response.statusCode == 200){
+			var parseBody = JSON.parse(body);
+			res.status(200).render('events', {title: "Events", content: parseBody, drive: DRIVE_URL});
+		}
+	})
 });
 
 

@@ -42,7 +42,7 @@ body{
 
 
 /* SECTIONS */
-#web-dev{
+.glass{
 	background: linear-gradient(
 		to right,
 		rgb(121, 222, 199), 
@@ -59,69 +59,68 @@ body{
 		rgba(255,255,255,0.6),
 		rgba(255,255,255,0.2)
 	);
-}
-.sec>div{
-	padding: 0.4em 1em;
-}
-.sec-title{
-	font-size: 3.5em;
-	justify-content: center;
-    display: flex;
-}
-.sec-subtitle{
-	font-size: 2em;
-}
-.sec-content{
-	font-size: 1.4em;
-}
+	padding: 1rem;
 
+	.sec-title{
+		font-size: 4rem;
+		justify-content: center;
+		display: flex;
+		padding-bottom: 1.5rem;
+	}
+	.content{
+		display: flex;
+		padding: 1rem 0;
+		::-webkit-scrollbar{
+			width: 12px;
+		}
+		::-webkit-scrollbar-thumb{
+			background: linear-gradient(transparent, #000124);
+			border-radius: 6px;
+		}
+		.list{
+			width: 20%;
+			width: 20%;
+			.head{
+				font-size: 2rem;
+			}
+			ul{
+				list-style: none;
+				height: 15rem;
+				overflow-y: scroll;
+				li{
+					margin: 0.8rem 0;
+    				font-size: 1.2rem;
+					cursor: pointer;
+				}
+			}
+		}
+		.content-list{
+			width: 80%;
 
-/* WEB DEV */
-.projects{
-	display: flex;
-}
+			.content-div{
+				display: none;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				padding: 0 1rem;
 
-.project-head{
-	font-size: 1.7rem;
-}
+				.name-title{
+					font-size: 2.5rem;
+					text-align: center;
+					width: 100%;
+					padding-bottom: 1.2rem;
+				}
+				.desc{
+					width: 70%;
+				}
+				img{
+					height: 10rem;
+				}
+			}
+		}
 
-.projects>div{
-    margin: 0.6em;
-    padding: 6em 0px 0px;
-    height: 10em;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-	width: 30%;
-	border-radius: 0.5em;
-	transition: transform 100ms ease-in-out;
-
-	&:hover .project-content{
-		transform: translateY(0);
 	}
 }
 
-#metis-project{
-	@include back-img("../images/metis_site.jpg");
-}
-#amal-project{
-	@include back-img("../images/amalthea.jpg");
-}
-#blith-project{
-	@include back-img("../images/blith.jpg");
-}
-#xyz-project{
-	@include back-img("../images/jack.jpg");
-}
-
-.project-content{
-	transform: translateY(140%);
-	transition: transform 100ms ease-in-out;
-	background: white;
-	opacity: 0.8;
-    height: 4em;
-    padding: 0.3em 0.8em;
-}
 
 @media only screen and (max-width:1000px){
 	#home{
@@ -139,18 +138,7 @@ body{
 		position: relative;
 		top: -0.5em;
 	}
-	.projects{
-		flex-direction: column;
-	}
-	.projects>div{
-		width: 80%;
-		margin: 10px auto;
-	}
 	.sec-title{
 		font-size: 2.5rem;
-	}
-	.sec-subtitle{
-		display: flex;
-		justify-content: center;
 	}
 }

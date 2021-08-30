@@ -7,66 +7,48 @@ body
 		#head-back
 		.title Events
 	
-	section#web-dev
-		.sec
-			.sec-title Web Development
-			#wedev-img
-				img(src='' alt='')
-			
-			.sec-subtitle Web Dev @ Metis
-			
-			.sec-content
-				| Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora, adipisci quaerat iusto fuga velit optio ut quae voluptate hic amet suscipit molestias expedita quos autem ipsum. Vel fugit vero quam, ipsa aspernatur error deleniti laudantium consectetur! Aliquid ex ipsam sunt atque, esse, ad amet, in cumque autem laudantium incidunt.
-			
-			.sec-subtitle Projects by Metis
-			.projects
-				#metis-project
-					.project-content
-						.project-head Metis Site
-						div Lorem ipsum dolor sit amet.
-				#amal-project
-					.project-content
-						.project-head Amalthea Site
-						div Lorem ipsum dolor sit amet.
-				#blith-project
-					.project-content
-						.project-head Blithchron Site
-						div Lorem ipsum dolor sit amet.
-				#xyz-project
-					.project-content
-						.project-head XYZ Site
-						div Lorem ipsum dolor sit amet.
-		
-	section#web-dev
-		.sec
-			.sec-title Machine Learning
-			#wedev-img
-				img(src='' alt='')
-			
-			.sec-subtitle ML @ Metis
-			
-			.sec-content
-				| Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempora, adipisci quaerat iusto fuga velit optio ut quae voluptate hic amet suscipit molestias expedita quos autem ipsum. Vel fugit vero quam, ipsa aspernatur error deleniti laudantium consectetur! Aliquid ex ipsam sunt atque, esse, ad amet, in cumque autem laudantium incidunt.
-			
-			.sec-subtitle Projects by Metis
-			.projects
-				#metis-project
-					.project-content
-						.project-head Metis Site
-						div Lorem ipsum dolor sit amet.
-				#amal-project
-					.project-content
-						.project-head Amalthea Site
-						div Lorem ipsum dolor sit amet.
-				#blith-project
-					.project-content
-						.project-head Blithchron Site
-						div Lorem ipsum dolor sit amet.
-				#xyz-project
-					.project-content
-						.project-head XYZ Site
-						div Lorem ipsum dolor sit amet.
-
+	section.glass
+		.sec#event
+			.sec-title Events
+			.content#ongoing
+				.list 
+					.head Ongoing
+					ul
+						each con in content 
+							if con.timeline==="Ongoing"
+								li= con.title
+						li lorem
+						li lorem
+						li lorem
+						li lorem
+						li lorem
+						li lorem
+						li lorem
+						li lorem
+						li lorem
+				.content-list 
+					each con in content
+						if con.timeline==="Ongoing"
+							.content-div
+								.name-title= con.title
+								.desc= con.desc 
+								img(src=drive + con.imgid)
+			.content#upcoming
+				.list 
+					.head Upcoming
+					ul
+						each con in content 
+							if con.timeline==="Upcoming"
+								li= con.title 
+								
+				.content-list 
+					each con in content
+						if con.timeline==="Upcoming"
+							.content-div
+								.name-title= con.title
+								.desc= con.desc 
+								img(src=drive + con.imgid)
+					
 	
 	include ./footer.pug
 	script
